@@ -6,7 +6,17 @@
 //  Copyright © 2016 AaronTheTitan. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum ImageResult {
+  case Success(UIImage)
+  case Failure(ErrorType)
+}
+
+enum PhotoError: ErrorType {
+  case ImageCreationError
+}
+
 
 class PhotoStore {
   
@@ -24,23 +34,6 @@ class PhotoStore {
     let task = session.dataTaskWithRequest(request) {
       (data, response, error) -> Void in
       
-//      if let jsonData = data {
-//        
-//        do {
-//          let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
-//          print(jsonObject)
-//        } catch let error {
-//          print("Error creating JSON object: \(error)")
-//        }
-//        
-//      } else if let requestError = error {
-//        print("Error fetching recent photos: \(requestError)")
-//        
-//      } else {
-//        print("Unexpected error with the request")
-//      }
-      
-      
       let result = self.processRecentPhotosRequest(data: data, error: error)
       completion(result)
       
@@ -54,6 +47,38 @@ class PhotoStore {
     }
     
     return FlickrAPI.photosfromJSONData(jsonData)
+  }
+  
+  func fetchImageForPhoto(photo: Photo, completion: (ImageResult) -> Void) {
+    let photoURL = photo.remoteURL
+    let request = NSURLRequest(URL: photoURL)
+    
+    let task = session.dataTaskWithRequest(request) {
+      (data, response, error) -> Void in
+      
+      let result = self.processImageRequest(data: data, error: error)
+      
+      if case let .Success(image) = result {
+        photo.image = image
+      }
+      completion(result)
+    }
+    task.resume()
+  }
+  
+  func processImageRequest(data data: NSData?, error: NSError?) -> ImageResult {
+    guard let
+      imageData = data,
+      image = UIImage(data: imageData) else {
+        
+        // couldn't create an image
+        if data == nil {
+          return .Failure(error!)
+        } else {
+          return .Failure(PhotoError.ImageCreationError)
+        }
+    }
+    return .Success(image)
   }
   
   
