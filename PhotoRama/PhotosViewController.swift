@@ -27,8 +27,13 @@ class PhotosViewController: UIViewController {
           self.store.fetchImageForPhoto(firstPhoto, completion: { (imageResult) -> Void in
             
             switch imageResult {
-            case let .Success(image): self.imageView.image = image
-            case let .Failure(error): print("Error downloading image: \(error)")
+            case let .Success(image):
+              NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.imageView.image = image
+              }
+              
+            case let .Failure(error):
+              print("Error downloading image: \(error)")
             }
           })
         }

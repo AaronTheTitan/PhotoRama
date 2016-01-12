@@ -33,7 +33,7 @@ class PhotoStore {
     
     let task = session.dataTaskWithRequest(request) {
       (data, response, error) -> Void in
-      
+
       let result = self.processRecentPhotosRequest(data: data, error: error)
       completion(result)
       
