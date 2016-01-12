@@ -20,22 +20,42 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iWh-P0-p6b">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mNC-SZ-Nam">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="mNC-SZ-Nam">
+                                    <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="yxj-qc-IC4">
-                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="yxj-qc-IC4" customClass="PhotoCollectionViewCell" customModule="PhotoRama" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="66" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txh-1k-bDF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="z06-ff-V46">
+                                                    <rect key="frame" x="35" y="35" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="txh-1k-bDF" firstAttribute="leading" secondItem="yxj-qc-IC4" secondAttribute="leading" id="1pn-Wq-2ZY"/>
+                                            <constraint firstItem="z06-ff-V46" firstAttribute="centerX" secondItem="yxj-qc-IC4" secondAttribute="centerX" id="5pt-xi-wLX"/>
+                                            <constraint firstItem="z06-ff-V46" firstAttribute="centerY" secondItem="yxj-qc-IC4" secondAttribute="centerY" id="UTN-qf-5Tf"/>
+                                            <constraint firstAttribute="trailing" secondItem="txh-1k-bDF" secondAttribute="trailing" id="a3B-dh-3Km"/>
+                                            <constraint firstAttribute="bottom" secondItem="txh-1k-bDF" secondAttribute="bottom" id="flf-3z-8WT"/>
+                                            <constraint firstItem="txh-1k-bDF" firstAttribute="top" secondItem="yxj-qc-IC4" secondAttribute="top" id="y7o-zT-nOQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="txh-1k-bDF" id="ucQ-xg-Jp1"/>
+                                            <outlet property="spinner" destination="z06-ff-V46" id="XCb-lB-7pJ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
