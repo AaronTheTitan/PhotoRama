@@ -14,6 +14,7 @@
 		916E63F01C45C6080066DC8E /* PhotoRama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 916E63EE1C45C6080066DC8E /* PhotoRama.xcdatamodeld */; };
 		916E63F31C45C9AA0066DC8E /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916E63F11C45C9AA0066DC8E /* Photo+CoreDataProperties.swift */; };
 		916E63F41C45C9AA0066DC8E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916E63F21C45C9AA0066DC8E /* Photo.swift */; };
+		916E63F61C45CD7B0066DC8E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916E63F51C45CD7B0066DC8E /* CoreDataStack.swift */; };
 		91AD3AF41C4339C100CB004C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AD3AF31C4339C100CB004C /* AppDelegate.swift */; };
 		91AD3AF91C4339C100CB004C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AD3AF71C4339C100CB004C /* Main.storyboard */; };
 		91AD3AFB1C4339C100CB004C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91AD3AFA1C4339C100CB004C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		916E63EF1C45C6080066DC8E /* PhotoRama.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoRama.xcdatamodel; sourceTree = "<group>"; };
 		916E63F11C45C9AA0066DC8E /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		916E63F21C45C9AA0066DC8E /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		916E63F51C45CD7B0066DC8E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		91AD3AF01C4339C100CB004C /* PhotoRama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AD3AF31C4339C100CB004C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AD3AF81C4339C100CB004C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				916E63F11C45C9AA0066DC8E /* Photo+CoreDataProperties.swift */,
 				916E63F21C45C9AA0066DC8E /* Photo.swift */,
+				916E63F51C45CD7B0066DC8E /* CoreDataStack.swift */,
 				91311DC61C4498D3004EB7D6 /* PhotoDataSource.swift */,
 				91311DC81C44A30B004EB7D6 /* PhotoCollectionViewCell.swift */,
 				916E63EC1C45C0B60066DC8E /* PhotoInfoViewController.swift */,
@@ -165,6 +168,7 @@
 				91311DC71C4498D3004EB7D6 /* PhotoDataSource.swift in Sources */,
 				916E63F41C45C9AA0066DC8E /* Photo.swift in Sources */,
 				91311DC91C44A30B004EB7D6 /* PhotoCollectionViewCell.swift in Sources */,
+				916E63F61C45CD7B0066DC8E /* CoreDataStack.swift in Sources */,
 				916E63ED1C45C0B60066DC8E /* PhotoInfoViewController.swift in Sources */,
 				916E63F31C45C9AA0066DC8E /* Photo+CoreDataProperties.swift in Sources */,
 				91AD3AF41C4339C100CB004C /* AppDelegate.swift in Sources */,
