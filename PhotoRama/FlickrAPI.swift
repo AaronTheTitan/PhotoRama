@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 enum Method: String {
@@ -61,7 +62,7 @@ struct FlickrAPI {
     return flickrURL(method: .RecentPhotos, parameters: ["extras": "url_h,date_taken"])
   }
   
-  static func photosfromJSONData(data: NSData) -> PhotosResult {
+  static func photosfromJSONData(data: NSData, inContext context: NSManagedObjectContext) -> PhotosResult {
     do {
       let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
       
@@ -78,7 +79,7 @@ struct FlickrAPI {
       var finalPhotos = [Photo]()
       
       for photoJSON in photosArray {
-        if let photo = photoFromJSONObject(photoJSON) {
+        if let photo = photoFromJSONObject(photoJSON, inContext: context) {
           finalPhotos.append(photo)
         }
       }
@@ -97,7 +98,7 @@ struct FlickrAPI {
     
   }
   
-  private static func photoFromJSONObject(json: [String: AnyObject]) -> Photo? {
+  private static func photoFromJSONObject(json: [String: AnyObject], inContext context: NSManagedObjectContext) -> Photo? {
     guard let
       photoID = json["id"] as? String,
       title = json["title"] as? String,
@@ -111,7 +112,16 @@ struct FlickrAPI {
        
     }
     
-    return Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: dateTaken)
+    var photo: Photo!
+    context.performBlockAndWait() {
+      photo = NSEntityDescription.insertNewObjectForEntityForName("Photo", inManagedObjectContext: context) as! Photo
+      photo.title = title
+      photo.photoID = photoID
+      photo.remoteURL = url
+      photo.dateTaken = dateTaken
+    }
+    
+    return photo
   }
   
 }
