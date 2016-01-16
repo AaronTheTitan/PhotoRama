@@ -21,6 +21,7 @@
 		91AD3AFE1C4339C100CB004C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AD3AFC1C4339C100CB004C /* LaunchScreen.storyboard */; };
 		91AD3B061C4339E700CB004C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AD3B051C4339E700CB004C /* PhotosViewController.swift */; };
 		91AD3B081C433B6900CB004C /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AD3B071C433B6900CB004C /* FlickrAPI.swift */; };
+		91DE5BEA1C4AD0FA0004D10F /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DE5BE91C4AD0FA0004D10F /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		91AD3AFF1C4339C100CB004C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91AD3B051C4339E700CB004C /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		91AD3B071C433B6900CB004C /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		91DE5BE91C4AD0FA0004D10F /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		91AD3AF21C4339C100CB004C /* PhotoRama */ = {
 			isa = PBXGroup;
 			children = (
+				91DE5BE91C4AD0FA0004D10F /* ImageStore.swift */,
 				916E63F11C45C9AA0066DC8E /* Photo+CoreDataProperties.swift */,
 				916E63F21C45C9AA0066DC8E /* Photo.swift */,
 				916E63F51C45CD7B0066DC8E /* CoreDataStack.swift */,
@@ -173,6 +176,7 @@
 				916E63F31C45C9AA0066DC8E /* Photo+CoreDataProperties.swift in Sources */,
 				91AD3AF41C4339C100CB004C /* AppDelegate.swift in Sources */,
 				916E63F01C45C6080066DC8E /* PhotoRama.xcdatamodeld in Sources */,
+				91DE5BEA1C4AD0FA0004D10F /* ImageStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
